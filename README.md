@@ -16,7 +16,7 @@ A Claude Code plugin marketplace for the `.project/` workflow. Planning docs liv
 ## Install
 
 ```
-/plugin marketplace add ~/Code/dotproject        # or <github-user>/dotproject once pushed
+/plugin marketplace add tobyvee/dotproject
 /plugin install dp@dotproject
 /plugin install dps@dotproject
 ```

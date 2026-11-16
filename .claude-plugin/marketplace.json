@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "dotproject",
+  "description": "The .project/ planning workflow for Claude Code: planning docs in the repo, and a spec-driven ticket workflow that plans, schedules, builds, reviews and records work with subagents.",
+  "owner": {
+    "name": "Toby V"
+  },
+  "plugins": [
+    {
+      "name": "dp",
+      "description": "Planning docs in a .project/ folder (PRDs, specs, tickets, reviews, STATUS.md) with frontmatter conventions, plus an optional Obsidian dashboard across repos.",
+      "version": "0.1.0",
+      "source": "./plugins/dp",
+      "category": "productivity"
+    },
+    {
+      "name": "dps",
+      "description": "Turn a tech spec into small, dependency-tagged tickets, schedule them into parallel-safe waves, and build each one with tests, code review, security audit, a decision log and a commit.",
+      "version": "0.1.0",
+      "source": "./plugins/dps",
+      "category": "development"
+    }
+  ]
+}

@@ -11,6 +11,8 @@ A Claude Code plugin marketplace for the `.project/` workflow. Planning docs liv
 
 `dps` builds on `dp`'s folder and conventions. Install both.
 
+**Companion app:** [Brief](https://github.com/tobyvee/brief) is a native macOS app for reading and editing `.project/` docs. Point it at a folder such as `~/Code` and it finds every `.project/` beneath it, showing each project's status, PRDs, specs, tickets and reviews, kept up to date as agents change them.
+
 ## Install
 
 ```
@@ -97,3 +99,7 @@ committed.
 - **Keep it current.** After finishing a ticket or feature, or hitting a blocker,
   run `/project-update` before reporting done.
 ```
+
+## Licence
+
+[MIT](LICENSE)

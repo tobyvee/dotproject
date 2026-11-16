@@ -2,6 +2,7 @@
   "name": "dp",
   "description": "Planning docs in a .project/ folder (PRDs, specs, tickets, reviews, STATUS.md) with frontmatter conventions, plus an optional Obsidian dashboard across repos.",
   "version": "0.1.0",
+  "license": "MIT",
   "author": {
     "name": "Toby V"
   },

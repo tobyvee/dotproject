@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: update-frontmatter-check
+expected_outcome: |
+  Every .project/ doc ends up with valid frontmatter: the PRD loses its
+  status and gains tags, the spec's project name is corrected, the ticket status
+  is normalised, the missing updated date is added and the index loses its
+  status. Bodies are untouched, the report lists each fix, and nothing is
+  committed.
+context:
+  scaffold_script: place-files.sh

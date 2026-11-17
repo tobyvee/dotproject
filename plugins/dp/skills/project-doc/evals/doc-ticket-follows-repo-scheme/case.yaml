@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: doc-ticket-follows-repo-scheme
+expected_outcome: |
+  A new ticket LED-4-<slug>.md that follows the repo's own ID scheme and
+  headings, with the required frontmatter and a checklist covering upload,
+  preview and confirm. STATUS.md and tickets/INDEX.md list it and STATUS.md's
+  updated date is bumped. Existing tickets and the spec are untouched. Nothing
+  is committed.
+context:
+  scaffold_script: place-files.sh

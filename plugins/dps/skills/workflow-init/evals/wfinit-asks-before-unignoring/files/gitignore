@@ -1,0 +1,4 @@
+node_modules/
+
+# Local planning docs (PRDs, specs, tickets, status); see CLAUDE.md
+/.project/

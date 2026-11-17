@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: init-rerun-fills-gaps
+expected_outcome: |
+  The existing STATUS.md, PRD and gitignore rule are left exactly as they
+  are. The missing spec/ and tickets/ folders and the CLAUDE.md section are
+  added, using the project name already in STATUS.md (wx-alerts), and the report
+  says what existed and what was created.
+context:
+  scaffold_script: place-files.sh

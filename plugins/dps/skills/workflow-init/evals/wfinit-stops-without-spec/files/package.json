@@ -1,0 +1,1 @@
+{ "name": "notes-sync", "private": true, "scripts": { "test": "vitest run" } }

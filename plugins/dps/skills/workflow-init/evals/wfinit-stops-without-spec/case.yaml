@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: wfinit-stops-without-spec
+expected_outcome: |
+  There is no spec, so the skill stops after making sure .project/ exists
+  and is committed. It adds no Workflow section and no ticket index, writes no
+  tickets, and tells the user to write a spec with a build plan (suggesting
+  /project-doc spec) and re-run.
+context:
+  scaffold_script: place-files.sh

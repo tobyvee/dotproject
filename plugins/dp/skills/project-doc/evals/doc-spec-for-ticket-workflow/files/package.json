@@ -1,0 +1,7 @@
+{
+  "name": "teamspace",
+  "private": true,
+  "scripts": { "dev": "next dev", "test": "vitest run", "build": "next build" },
+  "dependencies": { "next": "16.0.3", "react": "19.2.0", "drizzle-orm": "0.44.0", "zod": "4.1.0" },
+  "devDependencies": { "vitest": "3.2.0", "typescript": "5.9.0" }
+}

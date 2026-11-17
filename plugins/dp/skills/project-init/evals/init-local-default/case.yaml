@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: init-local-default
+expected_outcome: |
+  A local, gitignored .project/ with prd/, spec/, tickets/ and a STATUS.md
+  whose project name is invoice-tool and whose Summary is real prose about the
+  repo. The .gitignore ignores .project/, CLAUDE.md gains the Project Management
+  section, and nothing is committed.
+context:
+  scaffold_script: place-files.sh

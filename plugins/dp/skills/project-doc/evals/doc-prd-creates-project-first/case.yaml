@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: doc-prd-creates-project-first
+expected_outcome: |
+  Because the repo has no .project/, it is created first (local and
+  gitignored, project fieldnotes). The PRD lands at
+  .project/prd/offline-mode-prd.md with no status, the template's sections in
+  order, numbered testable requirements drawn from the request, and unknowns
+  under Open questions. Nothing is committed.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: wfinit-full-setup
+expected_outcome: |
+  CLAUDE.md gains a fully filled ## Workflow section (spec paths and real
+  headings, the repo's own commands, the user's P0, cut order and push answer,
+  the deploy from CI, private repo) and the Project Management section with the
+  Decision log and Reading the log, keeping its existing Style section. The
+  ticket index and the adoption decision are created. No agents, no commit.
+context:
+  scaffold_script: place-files.sh

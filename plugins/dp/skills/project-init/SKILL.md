@@ -30,7 +30,10 @@ move on.
 2. If the repo sits inside a workspace that already uses `.project/` (an ancestor
    has a `.project/` folder or a CLAUDE.md that describes the workflow), follow
    that workspace's conventions where they differ from these. Its CLAUDE.md wins.
-3. Canonical name (`project:` in frontmatter, and the dashboard key): `$ARGUMENTS`,
+3. Canonical name (`project:` in frontmatter, and the dashboard key). If
+   `.project/STATUS.md` already exists, its `project:` value wins, even over a
+   different package name. Existing docs and the dashboard already use it, and
+   renaming would split the project in two. Otherwise use `$ARGUMENTS`,
    else the module/package name (`go.mod` last path segment, `package.json`
    `name` without scope, `Cargo.toml`, `pyproject.toml`), else the repo directory
    name. Lowercase, kebab-case or dotted (`docs.example.io`). Confirm it with the

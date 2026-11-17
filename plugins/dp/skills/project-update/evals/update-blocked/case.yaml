@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: update-blocked
+expected_outcome: |
+  T-012 is set to blocked (not done) and its body records the blocker. In
+  STATUS.md its line stays where it is with a blocked note naming what is needed
+  and from whom, the unblocking action goes under Outstanding, no new section is
+  invented, and the Summary says the project is blocked. INDEX.md shows T-012 as
+  blocked. Updated dates are bumped and nothing is committed.
+context:
+  scaffold_script: place-files.sh

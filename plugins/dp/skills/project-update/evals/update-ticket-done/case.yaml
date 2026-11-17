@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: update-ticket-done
+expected_outcome: |
+  The user says T-007 is done, so it is recorded as done: its two verified
+  criteria are ticked and the load test is left unticked and explained.
+  STATUS.md moves it to Completed with the date and commit SHA, rewrites the
+  Summary, lists the load test as a follow-up under Outstanding and bumps
+  updated. The response points out the unticked criterion. Nothing is
+  git-added.
+context:
+  scaffold_script: place-files.sh

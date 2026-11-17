@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: status-first-run-setup
+expected_outcome: |
+  The config is initialised in dotproject-config/ with code_root and
+  vault_dir set from the user's answers. Both repos with a .project/ are
+  registered under the names in their STATUS.md frontmatter, with the right
+  adapters, and the repo without one is left out. Each gets a status and next
+  action, and the notes are written to vault/.
+context:
+  scaffold_script: place-files.sh

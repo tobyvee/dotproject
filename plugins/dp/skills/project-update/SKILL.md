@@ -21,8 +21,17 @@ For each ticket the work touched:
 
 - Set frontmatter `status:` (`todo` → `doing` → `done`, or `blocked`) and bump
   its `updated:`.
+- **The user's word sets the status.** If they say a ticket is done, set
+  `status: done` even when a criterion isn't verified yet. The verification
+  rule applies to the boxes, not to the status: leave unmet boxes unticked,
+  list each one under STATUS.md **Outstanding** as a follow-up, and point it
+  out in the report. Don't override the user or hold the status back to ask.
 - Tick acceptance-criteria boxes that were met; leave the rest unticked and say
   why in **Notes**.
+- For a blocked ticket, set `status: blocked` and add a `## Blocked` section to
+  the ticket body: what is needed, from whom, since when (today's date), and
+  what can resume once it arrives. The frontmatter alone doesn't tell the next
+  session what to chase.
 - If the repo keeps a decision log (`.project/decisions/`), add or extend the
   ticket's `## Decisions` list with a link to every decision file naming it.
 - In a one-file-per-feature ticket doc, set the doc's `status: done` only when
@@ -38,7 +47,12 @@ For each ticket the work touched:
   the date and commit SHAs; list follow-ups under **Outstanding** (one line each:
   what, where, why it matters).
 - Record blockers explicitly: what is needed, from whom. That's what makes a
-  project show as `blocked` instead of silently stale.
+  project show as `blocked` instead of silently stale. STATUS.md has a fixed set
+  of sections (Summary, In progress, Outstanding, Planned, Completed); don't add
+  a `## Blocked` one. Leave the blocked item's line where it is, unticked, and
+  append `— blocked: <what>, from <whom> (since YYYY-MM-DD)`. Then add an
+  **Outstanding** line for the action that unblocks it, and say it's blocked in
+  the Summary.
 - Bump `updated:` to today (`date +%F`).
 
 ## 3. Roll-ups
@@ -58,6 +72,13 @@ check), confirm the frontmatter has `title`, `type`, `project` (matching
 STATUS.md), `updated` (`YYYY-MM-DD`) and `tags`, and that `status` appears only on
 tickets, with a value from `todo | doing | done | blocked`. Fix what's wrong;
 report anything you couldn't infer.
+
+A frontmatter-only fix leaves an existing valid `updated:` date alone, because
+`updated:` records when the doc's content last changed, and the dashboard uses
+it to spot stale work. Bump it only when you change the content too, or when
+the date itself is missing or malformed. In that case, use the best date you
+can find (git history, or the date STATUS.md or INDEX.md gives for that doc)
+and say in the report where it came from.
 
 ## 5. Report
 

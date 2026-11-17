@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: doc-spec-for-ticket-workflow
+expected_outcome: |
+  A spec at .project/spec/team-invites-spec.md with correct frontmatter (no
+  status), linked to the PRD, covering its requirements, with a project
+  structure naming files, a per-module test-case table and a numbered build plan
+  whose steps end in commit messages. No placeholders.
+context:
+  scaffold_script: place-files.sh

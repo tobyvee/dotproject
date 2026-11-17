@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: wfinit-asks-before-unignoring
+expected_outcome: |
+  .project/ is gitignored, so the skill explains why the workflow needs it
+  committed (worktree agents read tickets from HEAD) and that committing
+  publishes the planning docs, then asks before changing .gitignore. The
+  gitignore rule is not removed without the user's go-ahead.
+context:
+  scaffold_script: place-files.sh

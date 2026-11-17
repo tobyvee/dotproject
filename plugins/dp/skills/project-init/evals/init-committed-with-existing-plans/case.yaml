@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: init-committed-with-existing-plans
+expected_outcome: |
+  A committed .project/ for route-planner. The existing .gitignore rule that
+  hides .project/ is shown and the user is asked before it is removed. The
+  existing planning docs (docs/PRD.md, TODO.md) are listed and the user is asked
+  before anything is moved; docs/api.md is published documentation and is left
+  alone. CLAUDE.md keeps its sections and gains a Project Management section
+  saying .project/ is committed. Empty folders get a .gitkeep. Nothing is
+  committed.
+context:
+  scaffold_script: place-files.sh

@@ -87,7 +87,7 @@ tags: [project, <project>, status]
 
 - **The Summary's first paragraph is quoted by the dashboard.** It must be prose. A paragraph that starts with a list, quote, table or heading is skipped.
 - **Record facts:** dates, commit SHAs, what was verified, what's still broken. Never tick anything that wasn't finished and verified.
-- **Blockers are explicit:** what's needed, and from whom. That's what makes a project show as blocked instead of silently stale.
+- **Blockers are explicit:** what's needed, and from whom. That's what makes a project show as blocked instead of silently stale. The blocked item keeps its line, with `— blocked: <what>, from <whom> (since <date>)` appended. The unblocking action goes under Outstanding, and the ticket gets `status: blocked` and a `## Blocked` section. There's no separate Blocked section in STATUS.md.
 - **Planned → In progress → Completed:** one `- [ ] T-NNN: title` line per ticket, moved and ticked as work lands. Follow-ups go under Outstanding, one line each: what, where, and why it matters.
 
 ## Skills

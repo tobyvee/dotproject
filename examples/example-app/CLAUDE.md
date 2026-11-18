@@ -122,7 +122,7 @@ Planning docs live in `.project/`, which **is committed with this repo**: worktr
 - `.project/tickets/`: engineering tickets, plus `INDEX.md` (the run order)
 - `.project/decisions/`: one file per decision (see **Decision log**)
 - `.project/review/`: audits with findings, and the manual checklist
-- `.project/STATUS.md`: current status (the dashboard quotes the first paragraph under `## Summary`)
+- `.project/STATUS.md`: current status (the first paragraph under `## Summary` is the project's summary)
 
 Every doc starts with YAML frontmatter (`title`, `type`, `project: example-app`, `updated`, `tags`; `status` on tickets only). Create single docs with `/project-doc`; record finished work with `/project-update`. Commit doc changes in the same commit as the work they record.
 

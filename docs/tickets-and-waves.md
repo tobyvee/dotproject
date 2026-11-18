@@ -52,7 +52,7 @@ A finished example is [`examples/example-app/project-samples/tickets/T-012-card-
 | P0 | The minimum the product must ship. Never cut. |
 | P1 | Planned extras. |
 | P2 | Stretch. Still scheduled, after the planned work. |
-| cut | Cut at the user's request. `status` stays `todo` so the dashboard still shows it unbuilt, and a `## Cut` note gives the reason. |
+| cut | Cut at the user's request. `status` stays `todo` so it still shows as unbuilt, and a `## Cut` note gives the reason. |
 
 **`estimate`** sizes the work and plans the waves. It's never checked against a time budget, so nothing is shrunk or dropped to fit.
 

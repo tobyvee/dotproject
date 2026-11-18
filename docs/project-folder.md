@@ -4,7 +4,7 @@ Every project keeps its planning docs in `.project/` at the repo root.
 
 ```
 .project/
-├── STATUS.md    # current status; the first paragraph under `## Summary` feeds the dashboard
+├── STATUS.md    # current status; the first paragraph under `## Summary` is the project's summary
 ├── prd/         # product requirements
 ├── spec/        # technical specifications
 ├── tickets/     # engineering tickets (and INDEX.md, the run order)
@@ -43,8 +43,8 @@ tags: [project, <project>, <type>]
 ---
 ```
 
-- **`project`** is spelled exactly as in `STATUS.md`. It's the dashboard's key.
-- **`status` only on tickets.** PRDs, specs, reviews, references, decisions and the status doc have no lifecycle. An invented status makes the dashboard report progress nobody measured. `tickets/INDEX.md` is `type: reference` with no `status`, so it isn't counted as a ticket.
+- **`project`** is spelled exactly as in `STATUS.md`, so every doc ties back to the same project.
+- **`status` only on tickets.** PRDs, specs, reviews, references, decisions and the status doc have no lifecycle. An invented status claims progress nobody measured. `tickets/INDEX.md` is `type: reference` with no `status`, so it isn't counted as a ticket.
 - **`updated`** is bumped whenever the doc changes.
 - Metadata goes in frontmatter, never as `**Status:**` lines in the body.
 
@@ -85,9 +85,9 @@ tags: [project, <project>, status]
 ## Completed
 ```
 
-- **The Summary's first paragraph is quoted by the dashboard.** It must be prose. A paragraph that starts with a list, quote, table or heading is skipped.
+- **The Summary's first paragraph is the project's summary.** Brief shows it for each project, and the next session reads it first. It must be prose, not a list, quote, table or heading.
 - **Record facts:** dates, commit SHAs, what was verified, what's still broken. Never tick anything that wasn't finished and verified.
-- **Blockers are explicit:** what's needed, and from whom. That's what makes a project show as blocked instead of silently stale. The blocked item keeps its line, with `— blocked: <what>, from <whom> (since <date>)` appended. The unblocking action goes under Outstanding, and the ticket gets `status: blocked` and a `## Blocked` section. There's no separate Blocked section in STATUS.md.
+- **Blockers are explicit:** what's needed, and from whom. That tells the next session what to chase instead of leaving the work silently stalled. The blocked item keeps its line, with `— blocked: <what>, from <whom> (since <date>)` appended. The unblocking action goes under Outstanding, and the ticket gets `status: blocked` and a `## Blocked` section. There's no separate Blocked section in STATUS.md.
 - **Planned → In progress → Completed:** one `- [ ] T-NNN: title` line per ticket, moved and ticked as work lands. Follow-ups go under Outstanding, one line each: what, where, and why it matters.
 
 ## Skills
@@ -97,4 +97,3 @@ tags: [project, <project>, status]
 | `/project-init [name] [--commit]` | A repo has no `.project/` yet |
 | `/project-doc <type> <title>` | Write one PRD, spec, ticket, review, reference or decision |
 | `/project-update [change]` | Record finished, changed or blocked work |
-| `/project-status` | Refresh the dashboard across all registered repos ([Dashboard](dashboard.md)) |

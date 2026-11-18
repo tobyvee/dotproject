@@ -1,6 +1,6 @@
 ---
 name: project-init
-description: Set up the .project/ planning folder (prd/, spec/, tickets/, STATUS.md) in the current repo, either local and gitignored (the default) or committed, document it in the repo's CLAUDE.md, and register the repo with the optional /project-status dashboard. Use when starting planning in a repo that has no .project/ yet, or when the user asks to "set up .project" or "add PM docs" to a project.
+description: Set up the .project/ planning folder (prd/, spec/, tickets/, STATUS.md) in the current repo, either local and gitignored (the default) or committed, and document it in the repo's CLAUDE.md. Use when starting planning in a repo that has no .project/ yet, or when the user asks to "set up .project" or "add PM docs" to a project.
 argument-hint: "[project-name] [--commit]"
 ---
 
@@ -30,9 +30,9 @@ move on.
 2. If the repo sits inside a workspace that already uses `.project/` (an ancestor
    has a `.project/` folder or a CLAUDE.md that describes the workflow), follow
    that workspace's conventions where they differ from these. Its CLAUDE.md wins.
-3. Canonical name (`project:` in frontmatter, and the dashboard key). If
+3. Canonical name (`project:` in frontmatter). If
    `.project/STATUS.md` already exists, its `project:` value wins, even over a
-   different package name. Existing docs and the dashboard already use it, and
+   different package name. Existing docs already use it, and
    renaming would split the project in two. Otherwise use `$ARGUMENTS`,
    else the module/package name (`go.mod` last path segment, `package.json`
    `name` without scope, `Cargo.toml`, `pyproject.toml`), else the repo directory
@@ -43,7 +43,7 @@ move on.
 
 ```
 .project/
-├── STATUS.md        # current status; the dashboard reads this
+├── STATUS.md        # current status; read first
 ├── prd/             # product requirements
 ├── spec/            # technical specifications
 └── tickets/         # engineering tickets (incl. cross-project integration tickets)
@@ -96,8 +96,8 @@ tags: [project, <project>, status]
 ## Summary
 
 <One or two sentences of plain prose: what the project is and where it stands
-today. The dashboard quotes this paragraph, so it must be prose. A paragraph
-that starts with a list, quote, table or heading is skipped.>
+today. Brief shows this paragraph as the project's summary, so it must be
+prose, not a list, quote, table or heading.>
 
 ## In progress
 
@@ -127,7 +127,7 @@ Planning docs live in a <**local, gitignored** | **committed**> `.project/` fold
 - `.project/prd/`: product requirements documents
 - `.project/spec/`: technical specifications
 - `.project/tickets/`: engineering tickets
-- `.project/STATUS.md`: current status (the dashboard quotes the first paragraph under `## Summary`)
+- `.project/STATUS.md`: current status (the first paragraph under `## Summary` is the project's summary)
 
 Every doc starts with YAML frontmatter (`title`, `type`, `project: <project>`,
 `updated`, `tags`; `status` on tickets only). Create docs with `/project-doc`;
@@ -138,29 +138,7 @@ the same commit as the work they record.>
 
 Don't commit the CLAUDE.md change unless asked; say it's ready to commit.
 
-## 6. Register with the dashboard (optional)
-
-The `/project-status` skill builds an Obsidian dashboard from every registered
-repo. It's configured in `~/.config/dotproject/dashboard.json`. If that file
-doesn't exist, skip this step and mention `/project-status` can be set up later.
-If it does:
-
-1. Add `"<project>": "<repo path relative to code_root>"` under `projects`,
-   keeping the existing ordering. Repos outside `code_root` can't be registered;
-   say so.
-2. If tickets will be one file per ticket with a `status:` field (the default
-   from `/project-doc` and the spec-driven workflow), add
-   `"<project>": "frontmatter_status"` under `adapters` so the dashboard counts
-   progress. Leave narrative-only projects out of `adapters`.
-3. Add an entry to `~/.config/dotproject/project-next.json`:
-   `"<project>": {"status": "active", "next": "<one concrete action>", "why": ""}`.
-   `next` must be a physical action someone could start now (a file, ticket or
-   command), not "continue work".
-4. Run `python3 ${CLAUDE_PLUGIN_ROOT}/skills/project-status/scripts/project-status.py --json`
-   and confirm the project appears with `has_status_doc: true`. If it exits
-   because the vault isn't mounted, that's fine: registration is done; mention it.
-
-## 7. Report
+## 6. Report
 
 Print what was created, what already existed, what was skipped and why, and the
 suggested next step: usually `/project-doc prd <feature>`, or

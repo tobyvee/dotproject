@@ -39,7 +39,7 @@ Consider only `todo` and `blocked` tickets that aren't cut.
 
 Cut only work the user named, in `$ARGUMENTS` or the conversation. A cut-order item maps to its tickets by `cut_rank`, using the cut order in CLAUDE.md → **Workflow → Priorities and cuts**.
 
-**Never cut P0.** If the user names a P0 ticket, say so and leave it in. For each cut, set `priority: cut` and keep `status: todo`, so the dashboard still shows it as unbuilt. Also add a `## Cut` note giving the reason, so the README can say what was cut and why.
+**Never cut P0.** If the user names a P0 ticket, say so and leave it in. For each cut, set `priority: cut` and keep `status: todo`, so it still shows as unbuilt. Also add a `## Cut` note giving the reason, so the README can say what was cut and why.
 
 Log each cut as a decision in `.project/decisions/` (`<ticket-id>-cut.md`, `decided_by: user`), following CLAUDE.md's **Decision log**. Give the user's reason as context and keeping the ticket as the alternative. Whenever you override the wave-ordering rules in step 2, e.g. to pull a lower-priority ticket forward, log that too (`decided_by: main session`).
 

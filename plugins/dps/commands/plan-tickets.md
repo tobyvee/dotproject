@@ -31,7 +31,7 @@ The planner logs its own planning decisions in `.project/decisions/`. If you ask
 
 ## 2. Record
 
-1. Create or update `.project/tickets/INDEX.md` with **no `status:` in its frontmatter**, so the dashboard doesn't count it as a ticket. Use `type: reference` and include a table with ID, title, priority, milestone, estimate, depends_on and status.
+1. Create or update `.project/tickets/INDEX.md` with **no `status:` in its frontmatter**, so it isn't counted as a ticket. Use `type: reference` and include a table with ID, title, priority, milestone, estimate, depends_on and status.
 2. Add one `- [ ] T-NNN: title` line per new ticket under `## Planned` in `STATUS.md`, and bump `updated:` in both files.
 3. Commit the new tickets, decision files, `INDEX.md` and `STATUS.md` together, e.g. `Plan tickets for build steps 1–9`, ending with the attribution trailer Claude Code currently specifies. The tickets must exist at `HEAD` before any worktree branches from it.
 4. Report the ticket count, the total estimate, which tickets can start now, and any spec gaps the planner found. Then suggest `/dps:prioritise-tickets`.

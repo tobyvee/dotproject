@@ -37,7 +37,7 @@ Run every step. Each is idempotent: re-running on a half-set-up repo fills the g
 
      ## Summary
 
-     <One or two sentences of plain prose: what the project is and where it stands today, written from the README and git log. The dashboard quotes this paragraph, so it must not start with a list, quote, table or heading.>
+     <One or two sentences of plain prose: what the project is and where it stands today, written from the README and git log. It's the project's summary, so it must not start with a list, quote, table or heading.>
 
      ## In progress
 
@@ -102,7 +102,7 @@ Offer each one you think is warranted, with a one-line reason; skip this step if
 
 ## 6. Create the ticket index
 
-If `.project/tickets/INDEX.md` doesn't exist, create it with **no `status:`** in its frontmatter, so the dashboard doesn't count it as a ticket:
+If `.project/tickets/INDEX.md` doesn't exist, create it with **no `status:`** in its frontmatter, so it isn't counted as a ticket:
 
 ```markdown
 ---

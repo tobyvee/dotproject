@@ -6,7 +6,7 @@ A Claude Code plugin marketplace for the `.project/` workflow. Planning docs liv
 
 | Plugin | What you get | Use it when |
 |---|---|---|
-| [`dp`](plugins/dp/) | `/project-init`, `/project-doc`, `/project-update`, `/project-status` | Any repo where you want PRDs, specs, tickets and a `STATUS.md` that Claude reads first and keeps current |
+| [`dp`](plugins/dp/) | `/project-init`, `/project-doc`, `/project-update` | Any repo where you want PRDs, specs, tickets and a `STATUS.md` that Claude reads first and keeps current |
 | [`dps`](plugins/dps/) | `/workflow-init`, `/plan-tickets`, `/prioritise-tickets`, `/implement-ticket`, `/implement-parallel`, and nine agents | A repo with a tech spec you want built ticket by ticket, in parallel where it's safe, with a reviewable commit history |
 
 `dps` builds on `dp`'s folder and conventions. Install both.
@@ -57,7 +57,6 @@ Plugin skills and commands are namespaced (`/dp:project-init`, `/dps:plan-ticket
 | [Decision log](docs/decision-log.md) | What counts as a decision, the file format, who writes, how agents read it |
 | [Agents](docs/agents.md) | Each agent's job, what it may write, and who calls it |
 | [Adapting to a project](docs/adapting.md) | The `## Workflow` contract in CLAUDE.md, project specialists and auditors |
-| [Dashboard](docs/dashboard.md) | The optional Obsidian dashboard across all your repos |
 
 ## Repository layout
 
@@ -65,7 +64,7 @@ Plugin skills and commands are namespaced (`/dp:project-init`, `/dps:plan-ticket
 .claude-plugin/marketplace.json     the marketplace manifest
 plugins/
   dp/                               .project/ docs plugin
-    skills/project-{init,doc,update,status}/
+    skills/project-{init,doc,update}/
   dps/                              ticket workflow plugin
     commands/                       plan-tickets, prioritise-tickets, implement-ticket, implement-parallel
     agents/                         ticket-planner, ticket-implementer, test-writer, code-reviewer,

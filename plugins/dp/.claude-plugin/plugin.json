@@ -1,10 +1,10 @@
 {
   "name": "dp",
-  "description": "Planning docs in a .project/ folder (PRDs, specs, tickets, reviews, STATUS.md) with frontmatter conventions, plus an optional Obsidian dashboard across repos.",
-  "version": "0.1.0",
+  "description": "Planning docs in a .project/ folder (PRDs, specs, tickets, reviews, STATUS.md) with frontmatter conventions.",
+  "version": "0.2.0",
   "license": "MIT",
   "author": {
     "name": "Toby V"
   },
-  "keywords": ["planning", "prd", "spec", "tickets", "status", "obsidian"]
+  "keywords": ["planning", "prd", "spec", "tickets", "status"]
 }

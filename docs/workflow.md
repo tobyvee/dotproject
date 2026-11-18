@@ -23,7 +23,7 @@ The loop is simple:
 2. **Write plans into `.project/`**, never into the repo root, `docs/` or `.claude/` (`/project-doc`).
 3. **Record what happened** after finishing or blocking on work (`/project-update`): ticket status, ticked criteria, a Summary that's true today, commit SHAs.
 
-The `STATUS.md` Summary is the resumption point: the next session, or the next person, starts there. The optional dashboard (`/project-status`) quotes it for every repo at once.
+The `STATUS.md` Summary is the resumption point: the next session, or the next person, starts there. [Brief](https://github.com/tobyvee/brief) shows it for every repo at once.
 
 Details: [The `.project/` folder](project-folder.md).
 

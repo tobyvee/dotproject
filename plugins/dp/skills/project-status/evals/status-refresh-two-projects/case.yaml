@@ -1,9 +1,0 @@
-schema_version: "1.1"
-name: status-refresh-two-projects
-expected_outcome: |
-  project-next.json gets a status and one concrete next action for both
-  registered projects, with beta-site marked blocked because it's waiting on the
-  client. The dashboard, per-project notes and Base are written to vault/. The
-  repos are untouched and nothing is written to ~/.config/dotproject.
-context:
-  scaffold_script: place-files.sh

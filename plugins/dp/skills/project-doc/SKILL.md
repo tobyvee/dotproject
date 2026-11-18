@@ -38,7 +38,7 @@ tags: [project, <project>, <type>]   # plus topic tags
 ```
 
 Set `status` only where a real lifecycle exists (tickets). PRDs, specs, reviews,
-references and decisions have none: an invented status makes the dashboard report
+references and decisions have none: an invented status claims
 progress nobody measured. A ticket index (`tickets/INDEX.md`) is `type: reference`
 with no `status`, so it isn't counted as a ticket. Put metadata in frontmatter, not
 as `**Status:**` lines in the body. Cross-references (`prd_ref`, `spec_ref`) may go

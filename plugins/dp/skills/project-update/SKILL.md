@@ -10,8 +10,8 @@ Bring `.project/` in line with what actually happened. `$ARGUMENTS` describes th
 change; if empty, work it out from this conversation and `git log` since
 STATUS.md's `updated:` date.
 
-The docs are the resumption point for the next session and the source for the
-`/project-status` dashboard, so record **facts**: commit SHAs, dates, what was
+The docs are the resumption point for the next session and what people read
+to see where the work stands (in Brief, or directly), so record **facts**: commit SHAs, dates, what was
 verified, what is still broken. Never tick something that wasn't finished and
 verified.
 
@@ -40,14 +40,14 @@ For each ticket the work touched:
 
 ## 2. STATUS.md
 
-- **`## Summary`**: rewrite the first paragraph so it is true today. The
-  dashboard quotes it: plain prose, one or two sentences, no leading list, quote
+- **`## Summary`**: rewrite the first paragraph so it is true today. It's
+  the project's summary, shown in Brief: plain prose, one or two sentences, no leading list, quote
   or table.
 - Tick the matching `- [ ]` boxes; move finished features to **Completed** with
   the date and commit SHAs; list follow-ups under **Outstanding** (one line each:
   what, where, why it matters).
-- Record blockers explicitly: what is needed, from whom. That's what makes a
-  project show as `blocked` instead of silently stale. STATUS.md has a fixed set
+- Record blockers explicitly: what is needed, from whom, so the next session
+  knows what to chase instead of finding the work silently stalled. STATUS.md has a fixed set
   of sections (Summary, In progress, Outstanding, Planned, Completed); don't add
   a `## Blocked` one. Leave the blocked item's line where it is, unticked, and
   append `— blocked: <what>, from <whom> (since YYYY-MM-DD)`. Then add an
@@ -61,9 +61,6 @@ For each ticket the work touched:
   monorepo root), update its row or summary for this project too.
 - If the repo's `CLAUDE.md` has a status table or checklist mirroring STATUS.md,
   update it to match, and mention that the CLAUDE.md change needs committing.
-- If the dashboard is set up (`~/.config/dotproject/project-next.json` exists) and
-  the work changed what to do next, update the project's entry there (`status`
-  and one concrete `next` action). Don't run `/project-status` unless asked.
 
 ## 4. Frontmatter check
 
@@ -74,8 +71,8 @@ tickets, with a value from `todo | doing | done | blocked`. Fix what's wrong;
 report anything you couldn't infer.
 
 A frontmatter-only fix leaves an existing valid `updated:` date alone, because
-`updated:` records when the doc's content last changed, and the dashboard uses
-it to spot stale work. Bump it only when you change the content too, or when
+`updated:` records when the doc's content last changed, which is how readers
+tell current docs from stale ones. Bump it only when you change the content too, or when
 the date itself is missing or malformed. In that case, use the best date you
 can find (git history, or the date STATUS.md or INDEX.md gives for that doc)
 and say in the report where it came from.

@@ -96,5 +96,8 @@ Consequences. A committed decision is never edited; supersede it with a new file
    `## In progress`, one `- [ ]` per ticket for a ticket set) and bump STATUS.md's
    `updated:`.
 2. If tickets use a `tickets/INDEX.md`, add the new rows there too.
-3. Tell the user the path. Only `git add` it if the repo's `CLAUDE.md` says
+3. If the doc is a spec with a build plan, and the repo's `CLAUDE.md` has no
+   `## Workflow` section, say that `/plan-tickets` needs one before it can plan
+   from this spec, and suggest `/dps:workflow-init` to add it.
+4. Tell the user the path. Only `git add` it if the repo's `CLAUDE.md` says
    `.project/` is committed, and then only as part of a commit the user asked for.

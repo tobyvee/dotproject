@@ -1,7 +1,7 @@
 {
   "name": "dp",
   "description": "Planning docs in a .project/ folder (PRDs, specs, tickets, reviews, STATUS.md) with frontmatter conventions.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "author": {
     "name": "Toby V"

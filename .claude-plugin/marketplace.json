@@ -9,14 +9,14 @@
     {
       "name": "dp",
       "description": "Planning docs in a .project/ folder (PRDs, specs, tickets, reviews, STATUS.md) with frontmatter conventions.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "source": "./plugins/dp",
       "category": "productivity"
     },
     {
       "name": "dps",
       "description": "Turn a tech spec into small, dependency-tagged tickets, schedule them into parallel-safe waves, and build each one with tests, code review, security audit, a decision log and a commit.",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "source": "./plugins/dps",
       "category": "development"
     }

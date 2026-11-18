@@ -19,7 +19,9 @@ Run every step. Each is idempotent: re-running on a half-set-up repo fills the g
 
 ## 2. Make sure `.project/` exists and is committed
 
-1. If `.project/` is missing, run the `dp:project-init` skill with the project name, if it's installed. Otherwise create it yourself:
+Steps 2 and 3 are checks that can stop the run, so don't create or change anything beyond what they say until both pass.
+
+1. If `.project/` is missing, run the `dp:project-init` skill with the project name and `--commit`, if it's installed. Otherwise create it yourself:
    - `.project/prd/`, `.project/spec/`, `.project/tickets/` (with a `.gitkeep` while empty).
    - `.project/STATUS.md`, with today's date (`date +%F`):
 
@@ -47,8 +49,7 @@ Run every step. Each is idempotent: re-running on a half-set-up repo fills the g
 
      ## Completed
      ```
-2. Create `.project/decisions/` (with a `.gitkeep`) if it's missing. `review/` is created when the first audit with findings is saved.
-3. **This workflow needs `.project/` committed**, unlike the dotproject default of a local, gitignored folder. Worktree agents read their ticket from `HEAD`, and each ticket's records are committed with its code. Check with `git check-ignore -q .project/STATUS.md`. If it's ignored:
+2. **This workflow needs `.project/` committed**, unlike the dotproject default of a local, gitignored folder. Worktree agents read their ticket from `HEAD`, and each ticket's records are committed with its code. Check with `git check-ignore -q .project/STATUS.md`. If it's ignored:
    - Explain why the workflow needs it committed, and that committing it publishes every planning doc wherever the repo is pushed (all of it, if the repo is public).
    - Ask before changing anything. On yes, remove the `/.project/` rule from `.gitignore` (or add `!/.project/` if the rule comes from elsewhere) and update the "Gitignored" line in `STATUS.md`. On no, stop: the commands can't run against an ignored `.project/`.
 
@@ -126,7 +127,7 @@ The run order for `/dps:implement-parallel`. `/dps:plan-tickets` adds tickets he
 
 ## 7. Log the adoption
 
-If `.project/decisions/general-adopt-spec-driven-workflow.md` doesn't exist, write it in the template's decision format:
+Create `.project/decisions/` if it's missing (`review/` is created when the first audit with findings is saved). If `.project/decisions/general-adopt-spec-driven-workflow.md` doesn't exist, write it in the template's decision format:
 
 - `title`: "This repo uses the spec-driven ticket workflow".
 - `ticket: none`, `decided_by: user` (the user asked for the workflow and answered step 4's questions).

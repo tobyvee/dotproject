@@ -1,7 +1,7 @@
 {
   "name": "dps",
   "description": "Turn a tech spec into small, dependency-tagged tickets, schedule them into parallel-safe waves, and build each one with tests, code review, security audit, a decision log and a commit.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": {
     "name": "Toby V"
